@@ -14,6 +14,17 @@ drush migrate-status
 drush migrate-import brand
 drush migrate-rollback brand
 
+Attention pour que les modifications soient prises en compte, il faut :
+ - faire un rollback
+ - désactiver le module
+ - faire les modifications
+ - réactivier le module
+
+drush migrate-rollback brand
+drush pmu migrate_crealead -y
+...
+drush en migrate_crealead -y
+
 See config/optional/migrate_plus.migration.product.yml for details about the
 migration.
 
