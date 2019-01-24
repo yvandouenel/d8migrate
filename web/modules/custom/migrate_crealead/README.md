@@ -11,7 +11,7 @@ USAGE
 Enable the module, check status, import all products and rollback with Drush
 drush en migrate_crealead
 drush migrate-status
-drush migrate-import brand
+drush migrate-import brand or article
 drush migrate-rollback brand
 
 Attention pour que les modifications soient prises en compte, il faut :

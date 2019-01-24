@@ -1,6 +1,6 @@
 # This migration demonstrates a simple import from a JSON file.
-id: brand
-label: JSON feed of Brands
+id: article
+label: JSON feed of articles
 migration_group: crealead_d7
 migration_tags:
   - json example
@@ -24,9 +24,9 @@ source:
   # track_changes: true
   # Copy the example JSON file in artifacts folder to sites/default/files folder.
   urls:
-    - 'http://local.crealead.my/export-marques/3333'
+    - 'http://local.crealead.my/export-articles/3333'
   # An xpath-like selector corresponding to the items to be imported.
-  item_selector: brand
+  item_selector: article
   # Under 'fields', we list the data items to be imported. The first level keys
   # are the source field names we want to populate (the names to be used as
   # sources in the process configuration below). For each field we're importing,
@@ -36,19 +36,15 @@ source:
   fields:
     -
       name: nid
-      label: 'Unique Brand identifier'
+      label: 'Unique Article identifier'
       selector: nid
     -
       name: title
-      label: 'Brand name'
+      label: 'Article title'
       selector: title
     -
-      name: field_brand_baseline
-      label: 'Brand subtitle'
-      selector: field_brand_baseline
-    -
       name: body
-      label: 'Product description'
+      label: 'Article description'
       selector: body
     
   # Under 'ids', we identify source fields populated above which will uniquely
@@ -62,11 +58,13 @@ process:
   # defined by the 'fields' configuration for the source plugin above.
   type:
     plugin: default_value
-    default_value: brand
+    default_value: article
   title: title
-  body: body
+  body/format:
+    plugin: default_value
+    default_value: full_html
+  body/value: body
   field_bid: nid
-  field_subtitle: field_brand_baseline
   sticky:
     plugin: default_value
     default_value: 0
