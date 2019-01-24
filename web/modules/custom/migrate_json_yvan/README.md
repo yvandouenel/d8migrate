@@ -9,7 +9,7 @@ from the artifacts folder to your sites/default/files folder.
 USAGE
 =====
 Enable the module, check status, import all products and rollback with Drush
-drush en migrate_json_example
+drush en migrate_json_yvan
 drush migrate-status
 drush migrate-import productyvan
 drush migrate-rollback productyvan
