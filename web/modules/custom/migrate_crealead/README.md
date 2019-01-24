@@ -9,10 +9,10 @@ from the artifacts folder to your sites/default/files folder.
 USAGE
 =====
 Enable the module, check status, import all products and rollback with Drush
-drush en migrate_json_example
+drush en migrate_crealead
 drush migrate-status
-drush migrate-import product
-drush migrate-rollback product
+drush migrate-import brand
+drush migrate-rollback brand
 
 See config/optional/migrate_plus.migration.product.yml for details about the
 migration.
