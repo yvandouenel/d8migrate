@@ -1,5 +1,5 @@
 # This migration demonstrates a simple import from a JSON file.
-id: product
+id: productyvan
 label: JSON feed of Products
 migration_group: Product
 migration_tags:
@@ -24,7 +24,7 @@ source:
   # track_changes: true
   # Copy the example JSON file in artifacts folder to sites/default/files folder.
   urls:
-    - 'public://migrate_json_example/products.json'
+    - 'public://migrate_json_example/productsyvan.json'
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: product
   # Under 'fields', we list the data items to be imported. The first level keys
@@ -78,4 +78,4 @@ migration_dependencies: {  }
 dependencies:
   enforced:
     module:
-      - migrate_json_example
+      - migrate_json_yvan
