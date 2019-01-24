@@ -1,7 +1,7 @@
 # This migration demonstrates a simple import from a JSON file.
 id: brand
 label: JSON feed of Products
-migration_group: Product
+migration_group: crealead_d7
 migration_tags:
   - json example
 source:
@@ -9,8 +9,8 @@ source:
   plugin: url
   # In this example we get data from a local file, to get data from a URL
   # define http as data_fetcher_plugin.
-  # data_fetcher_plugin: http
-  data_fetcher_plugin: file
+  data_fetcher_plugin: http
+  # data_fetcher_plugin: file
   data_parser_plugin: json
   # The data_parser normally limits the fields passed on to the source plugin
   # to fields configured to be used as part of the migration. To support more
@@ -24,7 +24,7 @@ source:
   # track_changes: true
   # Copy the example JSON file in artifacts folder to sites/default/files folder.
   urls:
-    - 'public://migrate_json_example/productsyvan.json'
+    - 'http://local.crealead.my/export-marques'
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: brand
   # Under 'fields', we list the data items to be imported. The first level keys
@@ -60,7 +60,7 @@ process:
     plugin: default_value
     default_value: brand
   title: title
-  field_upc: nid
+  field_bid: nid
   field_subtitle: field_brand_baseline
   sticky:
     plugin: default_value
