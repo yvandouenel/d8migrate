@@ -22,3 +22,6 @@
 
 # Ignore .env files as they are personal
 /.env
+
+# Ignore theme gulp configuration
+web/themes/custom/*/less/node_modules
