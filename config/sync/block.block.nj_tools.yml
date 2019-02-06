@@ -1,4 +1,4 @@
-uuid: f8d322c3-e131-42fa-b97c-67bafa373a14
+uuid: 3c92ba56-cd07-4a07-9a6d-6e1bf27232d9
 langcode: fr
 status: true
 dependencies:
@@ -7,18 +7,18 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - nj
 _core:
   default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
-id: bartik_tools
-theme: bartik
+id: nj_tools
+theme: nj
 region: sidebar_first
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'
 settings:
   id: 'system_menu_block:tools'
-  label: Tools
+  label: Outils
   provider: system
   label_display: visible
   level: 1

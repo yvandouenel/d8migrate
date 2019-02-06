@@ -1,22 +1,22 @@
-uuid: a0c5d9c1-1a81-417d-be0b-c71e0591672d
+uuid: 9f9451d3-e7ed-4d1c-b254-380d782f8c36
 langcode: fr
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - nj
 _core:
   default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
-id: bartik_content
-theme: bartik
+id: nj_content
+theme: nj
 region: content
 weight: 0
 provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
-  label: 'Main page content'
+  label: 'Contenu de la page principale'
   provider: system
   label_display: '0'
 visibility: {  }
