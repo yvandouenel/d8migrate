@@ -1,0 +1,89 @@
+# Migration configuration for imported images.
+id: import_drupal_images
+label: Import images from Drupal
+migration_group: crealead_d7
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - migrate_crealead
+
+destination:
+  plugin: entity:file
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'http://SOURCE-SITE.COM/'
+
+  urls: 'http://local.crealead.my/export-articles/3333'
+
+  ids:
+    id:
+      type: string
+
+  item_selector: field_image/
+
+  fields:
+    -
+      name: id
+      label: 'id'
+      selector: /data/id
+    -
+      name: fid
+      label: 'fid'
+      selector: /data/attributes/fid
+    -
+      name: uuid
+      label: 'uuid'
+      selector: /data/attributes/uuid
+    -
+      name: filename
+      label: 'filename'
+      selector: /data/attributes/filename
+    -
+      name: status
+      label: 'status'
+      selector: /data/attributes/status
+    -
+      name: timestamp
+      label: 'timestamp'
+      selector: /data/attributes/timestamp
+    -
+      name: uid
+      label: 'uid'
+      selector: /data/attributes/uid
+    -
+      name: uri
+      label: 'Uri'
+      selector: /data/attributes/uri
+    -
+      name: url
+      label: 'Url'
+      selector: /data/attributes/url
+
+process:
+
+  filename: filename
+  filemime: filemime
+  status: status
+  created: timestamp
+  changed: timestamp
+  uid: uid
+  uuid: id
+
+  source_full_path:
+    plugin: concat
+    delimiter: /
+    source:
+      - 'constants/source_base_path'
+      - url
+  uri:
+    plugin: download
+    source:
+      - '@source_full_path'
+      - uri
+    guzzle_options:
+base_uri: 'constants/source_base_path'
