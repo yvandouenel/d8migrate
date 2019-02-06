@@ -21,7 +21,7 @@ Attention pour que les modifications soient prises en compte, il faut :
  - réactivier le module
 
 drush migrate-rollback brand
-drush pmu migrate_crealead -y
+drush pmu migrate_crealead -y // permet de désactiver le module
 ...
 drush en migrate_crealead -y
 

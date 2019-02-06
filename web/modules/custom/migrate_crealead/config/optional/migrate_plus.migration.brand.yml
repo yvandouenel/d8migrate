@@ -64,7 +64,10 @@ process:
     plugin: default_value
     default_value: brand
   title: title
-  body: body
+  body/format:
+    plugin: default_value
+    default_value: full_html
+  body/value: body
   field_bid: nid
   field_subtitle: field_brand_baseline
   sticky:
